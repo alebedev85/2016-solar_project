@@ -73,7 +73,15 @@ def parse_planet_parameters(line, planet):
     **line** — строка с описание планеты.
     **planet** — объект планеты.
     """
-    pass  # FIXME: not done yet...
+    line = line.split()
+    planet.type = line[0]
+    planet.R = line[1]
+    planet.color = line[2]
+    planet.m = line[3]
+    planet.x = line[4]
+    planet.y = line[5]
+    planet.Vx = line[6]
+    planet.Vy = line[7]
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
