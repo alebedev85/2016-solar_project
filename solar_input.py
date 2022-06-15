@@ -95,7 +95,17 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     """
     with open(output_filename, 'w') as out_file:
         for obj in space_objects:
-            print(out_file, "%s %d %s %f" % ('1', 2, '3', 4.5))
+            type = obj.type.title()
+            r = obj.R
+            color = obj.color
+            m = obj.m
+            x = obj.x
+            y = obj.y
+            Vx = obj.Vx
+            Vy = obj.Vy
+            line = f'{type} {r} {color} {m} {x} {y} {Vx} {Vy}\n'
+            print(line)
+            out_file.write(line)
             # FIXME: should store real values
 
 # FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
